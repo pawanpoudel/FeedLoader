@@ -14,6 +14,7 @@
 		1539607C19CE556B000BF2AE /* FeedLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1539607B19CE556B000BF2AE /* FeedLoaderTests.m */; };
 		1539608D19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1539608B19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld */; };
 		1539609419CE6BC5000BF2AE /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 1539609319CE6BC5000BF2AE /* Feed.m */; };
+		1539609719CE6D53000BF2AE /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1539609619CE6D53000BF2AE /* CoreDataStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		1539608C19CE6AAD000BF2AE /* FeedLoader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedLoader.xcdatamodel; sourceTree = "<group>"; };
 		1539609219CE6BC5000BF2AE /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
 		1539609319CE6BC5000BF2AE /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
+		1539609519CE6D53000BF2AE /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		1539609619CE6D53000BF2AE /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				1539608B19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld */,
+				1539609519CE6D53000BF2AE /* CoreDataStack.h */,
+				1539609619CE6D53000BF2AE /* CoreDataStack.m */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -203,7 +208,7 @@
 		1539605119CE556B000BF2AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = FL;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Pawan Poudel";
 				TargetAttributes = {
@@ -259,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1539609719CE6D53000BF2AE /* CoreDataStack.m in Sources */,
 				1539608D19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld in Sources */,
 				1539609419CE6BC5000BF2AE /* Feed.m in Sources */,
 				1539606219CE556B000BF2AE /* AppDelegate.m in Sources */,
