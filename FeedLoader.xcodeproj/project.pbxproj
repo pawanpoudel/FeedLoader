@@ -16,6 +16,9 @@
 		1539609419CE6BC5000BF2AE /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 1539609319CE6BC5000BF2AE /* Feed.m */; };
 		1539609719CE6D53000BF2AE /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1539609619CE6D53000BF2AE /* CoreDataStack.m */; };
 		1539609A19CF0E4A000BF2AE /* FeedDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1539609919CF0E4A000BF2AE /* FeedDataManager.m */; };
+		1539609E19CF7040000BF2AE /* FeedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1539609D19CF7040000BF2AE /* FeedManager.m */; };
+		153960A219CF724A000BF2AE /* FeedBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 153960A119CF724A000BF2AE /* FeedBuilder.m */; };
+		153960A519CF77DF000BF2AE /* FileFeedFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 153960A419CF77DF000BF2AE /* FileFeedFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,14 @@
 		1539609619CE6D53000BF2AE /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 		1539609819CF0E4A000BF2AE /* FeedDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedDataManager.h; sourceTree = "<group>"; };
 		1539609919CF0E4A000BF2AE /* FeedDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedDataManager.m; sourceTree = "<group>"; };
+		1539609B19CF6F4C000BF2AE /* FeedFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedFetcher.h; sourceTree = "<group>"; };
+		1539609C19CF7040000BF2AE /* FeedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedManager.h; sourceTree = "<group>"; };
+		1539609D19CF7040000BF2AE /* FeedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedManager.m; sourceTree = "<group>"; };
+		1539609F19CF70E1000BF2AE /* FeedManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedManagerDelegate.h; sourceTree = "<group>"; };
+		153960A019CF724A000BF2AE /* FeedBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBuilder.h; sourceTree = "<group>"; };
+		153960A119CF724A000BF2AE /* FeedBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBuilder.m; sourceTree = "<group>"; };
+		153960A319CF77DF000BF2AE /* FileFeedFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileFeedFetcher.h; sourceTree = "<group>"; };
+		153960A419CF77DF000BF2AE /* FileFeedFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileFeedFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +160,14 @@
 		1539608F19CE6BAE000BF2AE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1539609B19CF6F4C000BF2AE /* FeedFetcher.h */,
+				153960A319CF77DF000BF2AE /* FileFeedFetcher.h */,
+				153960A419CF77DF000BF2AE /* FileFeedFetcher.m */,
+				1539609C19CF7040000BF2AE /* FeedManager.h */,
+				1539609D19CF7040000BF2AE /* FeedManager.m */,
+				1539609F19CF70E1000BF2AE /* FeedManagerDelegate.h */,
+				153960A019CF724A000BF2AE /* FeedBuilder.h */,
+				153960A119CF724A000BF2AE /* FeedBuilder.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -270,10 +289,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1539609719CE6D53000BF2AE /* CoreDataStack.m in Sources */,
+				1539609E19CF7040000BF2AE /* FeedManager.m in Sources */,
 				1539608D19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld in Sources */,
+				153960A219CF724A000BF2AE /* FeedBuilder.m in Sources */,
 				1539609419CE6BC5000BF2AE /* Feed.m in Sources */,
 				1539609A19CF0E4A000BF2AE /* FeedDataManager.m in Sources */,
 				1539606219CE556B000BF2AE /* AppDelegate.m in Sources */,
+				153960A519CF77DF000BF2AE /* FileFeedFetcher.m in Sources */,
 				1539605F19CE556B000BF2AE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
