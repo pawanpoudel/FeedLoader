@@ -15,6 +15,7 @@
 		1539608D19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1539608B19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld */; };
 		1539609419CE6BC5000BF2AE /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 1539609319CE6BC5000BF2AE /* Feed.m */; };
 		1539609719CE6D53000BF2AE /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1539609619CE6D53000BF2AE /* CoreDataStack.m */; };
+		1539609A19CF0E4A000BF2AE /* FeedDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1539609919CF0E4A000BF2AE /* FeedDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		1539609319CE6BC5000BF2AE /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
 		1539609519CE6D53000BF2AE /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		1539609619CE6D53000BF2AE /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		1539609819CF0E4A000BF2AE /* FeedDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedDataManager.h; sourceTree = "<group>"; };
+		1539609919CF0E4A000BF2AE /* FeedDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				1539608B19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld */,
 				1539609519CE6D53000BF2AE /* CoreDataStack.h */,
 				1539609619CE6D53000BF2AE /* CoreDataStack.m */,
+				1539609819CF0E4A000BF2AE /* FeedDataManager.h */,
+				1539609919CF0E4A000BF2AE /* FeedDataManager.m */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 				1539609719CE6D53000BF2AE /* CoreDataStack.m in Sources */,
 				1539608D19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld in Sources */,
 				1539609419CE6BC5000BF2AE /* Feed.m in Sources */,
+				1539609A19CF0E4A000BF2AE /* FeedDataManager.m in Sources */,
 				1539606219CE556B000BF2AE /* AppDelegate.m in Sources */,
 				1539605F19CE556B000BF2AE /* main.m in Sources */,
 			);
