@@ -12,6 +12,10 @@
 		1539606D19CE556B000BF2AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1539606C19CE556B000BF2AE /* Images.xcassets */; };
 		1539607019CE556B000BF2AE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1539606E19CE556B000BF2AE /* LaunchScreen.xib */; };
 		1539607C19CE556B000BF2AE /* FeedLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1539607B19CE556B000BF2AE /* FeedLoaderTests.m */; };
+		1539608D19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1539608B19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld */; };
+		1539609419CE6BC5000BF2AE /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 1539609319CE6BC5000BF2AE /* Feed.m */; };
+		1539609719CE6D53000BF2AE /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1539609619CE6D53000BF2AE /* CoreDataStack.m */; };
+		1539609A19CF0E4A000BF2AE /* FeedDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1539609919CF0E4A000BF2AE /* FeedDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,13 @@
 		1539607519CE556B000BF2AE /* FeedLoaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedLoaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1539607A19CE556B000BF2AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1539607B19CE556B000BF2AE /* FeedLoaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedLoaderTests.m; sourceTree = "<group>"; };
+		1539608C19CE6AAD000BF2AE /* FeedLoader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedLoader.xcdatamodel; sourceTree = "<group>"; };
+		1539609219CE6BC5000BF2AE /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
+		1539609319CE6BC5000BF2AE /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
+		1539609519CE6D53000BF2AE /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		1539609619CE6D53000BF2AE /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		1539609819CF0E4A000BF2AE /* FeedDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedDataManager.h; sourceTree = "<group>"; };
+		1539609919CF0E4A000BF2AE /* FeedDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +91,8 @@
 				1539606119CE556B000BF2AE /* AppDelegate.m */,
 				1539606C19CE556B000BF2AE /* Images.xcassets */,
 				1539606E19CE556B000BF2AE /* LaunchScreen.xib */,
+				1539608A19CE6A54000BF2AE /* DataLayer */,
+				1539608E19CE6B8A000BF2AE /* Feeds */,
 				1539605C19CE556B000BF2AE /* Supporting Files */,
 			);
 			path = FeedLoader;
@@ -109,6 +122,51 @@
 				1539607A19CE556B000BF2AE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1539608A19CE6A54000BF2AE /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				1539608B19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld */,
+				1539609519CE6D53000BF2AE /* CoreDataStack.h */,
+				1539609619CE6D53000BF2AE /* CoreDataStack.m */,
+				1539609819CF0E4A000BF2AE /* FeedDataManager.h */,
+				1539609919CF0E4A000BF2AE /* FeedDataManager.m */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		1539608E19CE6B8A000BF2AE /* Feeds */ = {
+			isa = PBXGroup;
+			children = (
+				1539608F19CE6BAE000BF2AE /* Controllers */,
+				1539609019CE6BAE000BF2AE /* Models */,
+				1539609119CE6BAE000BF2AE /* Views */,
+			);
+			path = Feeds;
+			sourceTree = "<group>";
+		};
+		1539608F19CE6BAE000BF2AE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1539609019CE6BAE000BF2AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1539609219CE6BC5000BF2AE /* Feed.h */,
+				1539609319CE6BC5000BF2AE /* Feed.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1539609119CE6BAE000BF2AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +213,7 @@
 		1539605119CE556B000BF2AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = FL;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Pawan Poudel";
 				TargetAttributes = {
@@ -211,6 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1539609719CE6D53000BF2AE /* CoreDataStack.m in Sources */,
+				1539608D19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld in Sources */,
+				1539609419CE6BC5000BF2AE /* Feed.m in Sources */,
+				1539609A19CF0E4A000BF2AE /* FeedDataManager.m in Sources */,
 				1539606219CE556B000BF2AE /* AppDelegate.m in Sources */,
 				1539605F19CE556B000BF2AE /* main.m in Sources */,
 			);
@@ -409,6 +471,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1539608B19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1539608C19CE6AAD000BF2AE /* FeedLoader.xcdatamodel */,
+			);
+			currentVersion = 1539608C19CE6AAD000BF2AE /* FeedLoader.xcdatamodel */;
+			path = FeedLoader.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1539605119CE556B000BF2AE /* Project object */;
 }
