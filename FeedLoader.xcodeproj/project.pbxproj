@@ -62,6 +62,7 @@
 		153960C519CF8A54000BF2AE /* FeedCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedCard.h; sourceTree = "<group>"; };
 		153960C619CF8A54000BF2AE /* FeedCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedCard.m; sourceTree = "<group>"; };
 		153960C719CF8A54000BF2AE /* FeedCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCard.xib; sourceTree = "<group>"; };
+		153960CA19CF9043000BF2AE /* FeedListTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedListTableDataSource.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +217,14 @@
 				153960B019CF85EC000BF2AE /* FeedBuilder.m */,
 			);
 			path = ModelBuilders;
+			sourceTree = "<group>";
+		};
+		153960B919CF8779000BF2AE /* FeedList */ = {
+			isa = PBXGroup;
+			children = (
+				153960CA19CF9043000BF2AE /* FeedListTableDataSource.h */,
+			);
+			path = FeedList;
 			sourceTree = "<group>";
 		};
 		153960C419CF8A2C000BF2AE /* Cards */ = {
