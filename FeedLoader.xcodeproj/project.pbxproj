@@ -19,6 +19,8 @@
 		153960B119CF85EC000BF2AE /* FileFeedFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 153960A919CF85EC000BF2AE /* FileFeedFetcher.m */; };
 		153960B219CF85EC000BF2AE /* FeedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 153960AC19CF85EC000BF2AE /* FeedManager.m */; };
 		153960B319CF85EC000BF2AE /* FeedBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 153960B019CF85EC000BF2AE /* FeedBuilder.m */; };
+		153960C819CF8A54000BF2AE /* FeedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 153960C619CF8A54000BF2AE /* FeedCard.m */; };
+		153960C919CF8A54000BF2AE /* FeedCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 153960C719CF8A54000BF2AE /* FeedCard.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		153960AD19CF85EC000BF2AE /* FeedManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedManagerDelegate.h; sourceTree = "<group>"; };
 		153960AF19CF85EC000BF2AE /* FeedBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBuilder.h; sourceTree = "<group>"; };
 		153960B019CF85EC000BF2AE /* FeedBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBuilder.m; sourceTree = "<group>"; };
+		153960C519CF8A54000BF2AE /* FeedCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedCard.h; sourceTree = "<group>"; };
+		153960C619CF8A54000BF2AE /* FeedCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedCard.m; sourceTree = "<group>"; };
+		153960C719CF8A54000BF2AE /* FeedCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCard.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +184,7 @@
 		1539609119CE6BAE000BF2AE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				153960C419CF8A2C000BF2AE /* Cards */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +216,16 @@
 				153960B019CF85EC000BF2AE /* FeedBuilder.m */,
 			);
 			path = ModelBuilders;
+			sourceTree = "<group>";
+		};
+		153960C419CF8A2C000BF2AE /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				153960C519CF8A54000BF2AE /* FeedCard.h */,
+				153960C619CF8A54000BF2AE /* FeedCard.m */,
+				153960C719CF8A54000BF2AE /* FeedCard.xib */,
+			);
+			path = Cards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +311,7 @@
 			files = (
 				1539607019CE556B000BF2AE /* LaunchScreen.xib in Resources */,
 				1539606D19CE556B000BF2AE /* Images.xcassets in Resources */,
+				153960C919CF8A54000BF2AE /* FeedCard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +331,7 @@
 			files = (
 				1539609719CE6D53000BF2AE /* CoreDataStack.m in Sources */,
 				153960B119CF85EC000BF2AE /* FileFeedFetcher.m in Sources */,
+				153960C819CF8A54000BF2AE /* FeedCard.m in Sources */,
 				1539608D19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld in Sources */,
 				153960B319CF85EC000BF2AE /* FeedBuilder.m in Sources */,
 				1539609419CE6BC5000BF2AE /* Feed.m in Sources */,
