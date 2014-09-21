@@ -8,6 +8,7 @@
 
 #import "FeedCard.h"
 #import "Feed.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 static NSString *const kNibName = @"FeedCard";
 
@@ -50,6 +51,8 @@ static NSString *const kNibName = @"FeedCard";
                                  forState:UIControlStateNormal];
     
     self.titleLabel.text = feed.title;
+    [self.feedImageView sd_setImageWithURL:[NSURL URLWithString:feed.imageUrl]
+                          placeholderImage:[UIImage imageNamed:@"feedPlaceholderImage"]];
 }
 
 - (NSString *)publishedDateString {
