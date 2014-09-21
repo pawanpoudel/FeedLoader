@@ -19,6 +19,7 @@
 		153960B119CF85EC000BF2AE /* FileFeedFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 153960A919CF85EC000BF2AE /* FileFeedFetcher.m */; };
 		153960B219CF85EC000BF2AE /* FeedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 153960AC19CF85EC000BF2AE /* FeedManager.m */; };
 		153960B319CF85EC000BF2AE /* FeedBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 153960B019CF85EC000BF2AE /* FeedBuilder.m */; };
+		153960C319CF8954000BF2AE /* FeedListTableDefaultDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 153960C219CF8954000BF2AE /* FeedListTableDefaultDataSource.m */; };
 		153960C819CF8A54000BF2AE /* FeedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 153960C619CF8A54000BF2AE /* FeedCard.m */; };
 		153960C919CF8A54000BF2AE /* FeedCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 153960C719CF8A54000BF2AE /* FeedCard.xib */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,8 @@
 		153960AD19CF85EC000BF2AE /* FeedManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedManagerDelegate.h; sourceTree = "<group>"; };
 		153960AF19CF85EC000BF2AE /* FeedBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBuilder.h; sourceTree = "<group>"; };
 		153960B019CF85EC000BF2AE /* FeedBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBuilder.m; sourceTree = "<group>"; };
+		153960C119CF8954000BF2AE /* FeedListTableDefaultDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedListTableDefaultDataSource.h; sourceTree = "<group>"; };
+		153960C219CF8954000BF2AE /* FeedListTableDefaultDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedListTableDefaultDataSource.m; sourceTree = "<group>"; };
 		153960C519CF8A54000BF2AE /* FeedCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedCard.h; sourceTree = "<group>"; };
 		153960C619CF8A54000BF2AE /* FeedCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedCard.m; sourceTree = "<group>"; };
 		153960C719CF8A54000BF2AE /* FeedCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCard.xib; sourceTree = "<group>"; };
@@ -223,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				153960CA19CF9043000BF2AE /* FeedListTableDataSource.h */,
+				153960C119CF8954000BF2AE /* FeedListTableDefaultDataSource.h */,
+				153960C219CF8954000BF2AE /* FeedListTableDefaultDataSource.m */,
 			);
 			path = FeedList;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1539609719CE6D53000BF2AE /* CoreDataStack.m in Sources */,
+				153960C319CF8954000BF2AE /* FeedListTableDefaultDataSource.m in Sources */,
 				153960B119CF85EC000BF2AE /* FileFeedFetcher.m in Sources */,
 				153960C819CF8A54000BF2AE /* FeedCard.m in Sources */,
 				1539608D19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld in Sources */,
