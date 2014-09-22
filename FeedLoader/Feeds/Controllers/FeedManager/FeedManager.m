@@ -8,11 +8,13 @@
 
 #import "FeedManager.h"
 #import "FeedBuilder.h"
+#import "FeedDataManager.h"
 
 @interface FeedManager()
 
 @property (nonatomic) FeedBuilder *feedBuilder;
 @property (nonatomic) id<FeedFetcher> feedFetcher;
+@property (nonatomic) FeedDataManager *feedDataManager;
 
 @end
 
@@ -36,8 +38,13 @@
 }
 
 - (void)buildFeedsFromJSON:(NSArray *)JSON {
+    NSArray *feeds = [self.feedBuilder feedsFromJSON:JSON];
+    
+    if ([feeds count] == 0) {
+        feeds = [self.feedDataManager allFeed];
+    }
+    
     if ([self.delegate respondsToSelector:@selector(feedManager:didReceiveFeeds:)]) {
-        NSArray *feeds = [self.feedBuilder feedsFromJSON:JSON];
         [self.delegate feedManager:self didReceiveFeeds:feeds];
     }
 }
