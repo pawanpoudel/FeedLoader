@@ -15,16 +15,22 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SNs-3k-rcT">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SNs-3k-rcT">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="SNs-3k-rcT" secondAttribute="trailing" id="Ctx-jn-ee6"/>
+                <constraint firstItem="SNs-3k-rcT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tvM-p0-K9J"/>
+                <constraint firstItem="SNs-3k-rcT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="u6M-St-1dd"/>
+                <constraint firstAttribute="bottom" secondItem="SNs-3k-rcT" secondAttribute="bottom" id="usc-BO-cSN"/>
+            </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="256.5" y="-160.5"/>
+            <point key="canvasLocation" x="81.5" y="-146.5"/>
         </view>
     </objects>
 </document>
