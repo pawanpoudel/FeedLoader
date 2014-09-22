@@ -4,33 +4,33 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedListViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedDetailViewController">
             <connections>
-                <outlet property="feedTableView" destination="SNs-3k-rcT" id="pdD-bi-Mgm"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="tableView" destination="Uw4-rM-5k9" id="MHz-Tr-0by"/>
+                <outlet property="view" destination="iN0-l3-epB" id="riN-1U-Ccu"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SNs-3k-rcT">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Uw4-rM-5k9">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="SNs-3k-rcT" secondAttribute="trailing" id="Ctx-jn-ee6"/>
-                <constraint firstItem="SNs-3k-rcT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tvM-p0-K9J"/>
-                <constraint firstItem="SNs-3k-rcT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="u6M-St-1dd"/>
-                <constraint firstAttribute="bottom" secondItem="SNs-3k-rcT" secondAttribute="bottom" id="usc-BO-cSN"/>
+                <constraint firstItem="Uw4-rM-5k9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MdM-Tt-TwM"/>
+                <constraint firstItem="Uw4-rM-5k9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Vur-5O-gSv"/>
+                <constraint firstAttribute="bottom" secondItem="Uw4-rM-5k9" secondAttribute="bottom" id="buR-vf-gs3"/>
+                <constraint firstAttribute="trailing" secondItem="Uw4-rM-5k9" secondAttribute="trailing" id="rFM-ON-YQv"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="81.5" y="-146.5"/>
+            <point key="canvasLocation" x="-158.5" y="148.5"/>
         </view>
     </objects>
 </document>

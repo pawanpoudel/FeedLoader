@@ -9,6 +9,8 @@
 #import "FeedListViewController.h"
 #import "FeedListTableDefaultDataSource.h"
 #import "FeedManager.h"
+#import "FeedDetailViewController.h"
+#import "FeedDetailTableDefaultDataSource.h"
 
 @interface FeedListViewController ()
 
@@ -59,7 +61,14 @@
 #pragma mark - Notification handling
 
 - (void)didSelectFeedNotification:(NSNotification *)notification {
-    // TODO: Push detail feed view into navigation stack.
+    FeedDetailTableDefaultDataSource *detailTableDataSource = [[FeedDetailTableDefaultDataSource alloc] init];
+    [detailTableDataSource setFeed:[notification object]];
+    
+    FeedDetailViewController *feedDetailViewController = [[FeedDetailViewController alloc] init];
+    feedDetailViewController.dataSource = detailTableDataSource;
+    
+    [self.navigationController pushViewController:feedDetailViewController
+                                         animated:YES];
 }
 
 #pragma mark - Feed manager delegate methods

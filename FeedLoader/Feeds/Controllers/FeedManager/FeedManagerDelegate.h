@@ -9,7 +9,7 @@
 @import Foundation;
 @class FeedManager;
 
-/*!
+/**
     @description The delegate protocol for FeedManager class.
     @discussion FeedManager uses this delegate protocol to indicate
                 when information becomes available, and to report any
@@ -19,7 +19,7 @@
 
 @optional
 
-/*!
+/**
     @description Indicates that FeedManager was unable to retrieve feeds
                  from remote server.
     @param manager A FeedManager object that initiated fetching of feeds.
@@ -29,7 +29,7 @@
 - (void)feedManager:(FeedManager *)manager
     failedToFetchFeedsWithError:(NSError *)error;
 
-/*!
+/**
     @description Indicates that FeedManager retrieved a list of feed from
                  remote server.
     @param manager A FeedManager object that initiated fetching of feeds.

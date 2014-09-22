@@ -6,11 +6,12 @@
 //  Copyright (c) 2014 Pawan Poudel. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import "Shareable.h"
 
+@import Foundation;
+@import CoreData;
 
-@interface Feed : NSManagedObject
+@interface Feed : NSManagedObject <Shareable>
 
 @property (nonatomic, retain) NSString * imageUrl;
 @property (nonatomic, retain) NSDate * publishedDate;

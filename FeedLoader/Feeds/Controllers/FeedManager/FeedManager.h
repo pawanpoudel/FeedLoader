@@ -40,7 +40,7 @@
  */
 - (void)setFeedBuilder:(FeedBuilder *)feedBuilder;
 
-/*!
+/**
     @description Sets the feed data manager that knows how to create,
                  update, delete and retrieve Feed objects.
     @param feedDataManager A FeedDataManager object.
