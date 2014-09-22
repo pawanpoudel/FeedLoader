@@ -25,6 +25,8 @@
 		153960C819CF8A54000BF2AE /* FeedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 153960C619CF8A54000BF2AE /* FeedCard.m */; };
 		153960C919CF8A54000BF2AE /* FeedCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 153960C719CF8A54000BF2AE /* FeedCard.xib */; };
 		1553AB2919CFA3C500D18C16 /* feeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 1553AB2819CFA3C500D18C16 /* feeds.json */; };
+		1555EB3619CFB64B0036B59F /* FeedDetailCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1555EB3519CFB64B0036B59F /* FeedDetailCard.m */; };
+		1555EB3819CFB6860036B59F /* FeedDetailCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1555EB3719CFB6860036B59F /* FeedDetailCard.xib */; };
 		1555EB3D19CFBA380036B59F /* FeedDetailTableDefaultDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1555EB3C19CFBA380036B59F /* FeedDetailTableDefaultDataSource.m */; };
 		15E55A4719CF9CDF00816EB9 /* ObjectConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E55A4619CF9CDF00816EB9 /* ObjectConfigurator.m */; };
 		369A6B1A75BE4F108D1F6497 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD3A73E4F044FF7AF266EDF /* libPods.a */; };
@@ -76,6 +78,9 @@
 		153960C719CF8A54000BF2AE /* FeedCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCard.xib; sourceTree = "<group>"; };
 		153960CA19CF9043000BF2AE /* FeedListTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedListTableDataSource.h; sourceTree = "<group>"; };
 		1553AB2819CFA3C500D18C16 /* feeds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feeds.json; sourceTree = "<group>"; };
+		1555EB3419CFB64B0036B59F /* FeedDetailCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedDetailCard.h; sourceTree = "<group>"; };
+		1555EB3519CFB64B0036B59F /* FeedDetailCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedDetailCard.m; sourceTree = "<group>"; };
+		1555EB3719CFB6860036B59F /* FeedDetailCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedDetailCard.xib; sourceTree = "<group>"; };
 		1555EB3A19CFB86F0036B59F /* FeedDetailTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedDetailTableDataSource.h; sourceTree = "<group>"; };
 		1555EB3B19CFBA380036B59F /* FeedDetailTableDefaultDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedDetailTableDefaultDataSource.h; sourceTree = "<group>"; };
 		1555EB3C19CFBA380036B59F /* FeedDetailTableDefaultDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedDetailTableDefaultDataSource.m; sourceTree = "<group>"; };
@@ -265,6 +270,9 @@
 				153960C519CF8A54000BF2AE /* FeedCard.h */,
 				153960C619CF8A54000BF2AE /* FeedCard.m */,
 				153960C719CF8A54000BF2AE /* FeedCard.xib */,
+				1555EB3419CFB64B0036B59F /* FeedDetailCard.h */,
+				1555EB3519CFB64B0036B59F /* FeedDetailCard.m */,
+				1555EB3719CFB6860036B59F /* FeedDetailCard.xib */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -382,6 +390,7 @@
 			files = (
 				1539607019CE556B000BF2AE /* LaunchScreen.xib in Resources */,
 				1539606D19CE556B000BF2AE /* Images.xcassets in Resources */,
+				1555EB3819CFB6860036B59F /* FeedDetailCard.xib in Resources */,
 				153960C019CF87BA000BF2AE /* FeedListViewController.xib in Resources */,
 				1553AB2919CFA3C500D18C16 /* feeds.json in Resources */,
 				153960C919CF8A54000BF2AE /* FeedCard.xib in Resources */,
@@ -437,6 +446,7 @@
 			files = (
 				1539609719CE6D53000BF2AE /* CoreDataStack.m in Sources */,
 				153960C319CF8954000BF2AE /* FeedListTableDefaultDataSource.m in Sources */,
+				1555EB3619CFB64B0036B59F /* FeedDetailCard.m in Sources */,
 				153960B119CF85EC000BF2AE /* FileFeedFetcher.m in Sources */,
 				153960C819CF8A54000BF2AE /* FeedCard.m in Sources */,
 				1539608D19CE6AAD000BF2AE /* FeedLoader.xcdatamodeld in Sources */,
