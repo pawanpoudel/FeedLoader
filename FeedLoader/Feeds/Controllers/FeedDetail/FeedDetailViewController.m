@@ -9,6 +9,7 @@
 #import "FeedDetailViewController.h"
 #import "Feed.h"
 #import "FeedDetailCard.h"
+#import "PBWebViewcontroller.h"
 
 @interface FeedDetailViewController()
 
@@ -48,7 +49,12 @@
 #pragma mark - Notification handling
 
 - (void)didSelectViewSource:(NSNotification *)notification {
-    // TODO: Display source URL in an embedded web browser
+    Feed *feed = [notification object];
+    PBWebViewController *webViewController = [[PBWebViewController alloc] init];
+    webViewController.URL = [NSURL URLWithString:feed.sourceUrl];
+    
+    [self.navigationController pushViewController:webViewController
+                                         animated:YES];
 }
 
 @end
