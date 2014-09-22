@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+@class FeedManager;
 
 @interface ObjectConfigurator : NSObject
 
@@ -19,5 +20,12 @@
                 one object configurator for the entire app.
  */
 + (ObjectConfigurator *)sharedInstance;
+
+/**
+    @description A fully configured FeedManager object. The delegate
+                 for this object is not set here. The delegate should
+                 be set to the object that wishes to use feed manager.
+ */
+- (FeedManager *)feedManager;
 
 @end
