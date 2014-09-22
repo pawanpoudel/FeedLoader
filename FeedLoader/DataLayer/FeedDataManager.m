@@ -57,7 +57,7 @@
     NSError *error = nil;
     NSArray *feedList = [[self managedObjectContext] executeFetchRequest:request
                                                                    error:&error];
-    if (error) {
+    if (feedList == nil) {
         NSLog(@"Error occurred while checking the existence of feeds with source url: %@",
               error.localizedDescription);
     }
@@ -67,6 +67,20 @@
     }
     
     return NO;
+}
+
+- (NSArray *)allFeed {
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Feed"];
+    
+    NSError *error = nil;
+    NSArray *feedList = [[self managedObjectContext] executeFetchRequest:request
+                                                                   error:&error];
+    if (feedList == nil) {
+        NSLog(@"Error occurred while checking the existence of feeds with source url: %@",
+              error.localizedDescription);
+    }
+    
+    return feedList;
 }
 
 @end
