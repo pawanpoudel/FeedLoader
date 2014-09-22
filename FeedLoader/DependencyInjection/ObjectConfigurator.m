@@ -32,6 +32,7 @@
     FeedManager *feedManager = [[FeedManager alloc] init];
     [feedManager setFeedFetcher:[[FileFeedFetcher alloc] init]];
     [feedManager setFeedBuilder:[self feedBuilder]];
+    [feedManager setFeedDataManager:[self feedDataManager]];
     
     return feedManager;
 }

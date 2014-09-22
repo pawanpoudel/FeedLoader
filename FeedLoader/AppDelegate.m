@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "FeedListViewController.h"
+#import "ObjectConfigurator.h"
 
 @implementation AppDelegate
 
@@ -14,6 +16,11 @@
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    FeedListViewController *feedListVC = [[ObjectConfigurator sharedInstance] feedListViewController];
+    UINavigationController *feedListNavController = [[UINavigationController alloc] initWithRootViewController:feedListVC];
+    
+    self.window.rootViewController = feedListNavController;
     [self.window makeKeyAndVisible];
     
     return YES;

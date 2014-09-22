@@ -40,4 +40,9 @@
  */
 - (BOOL)feedExistsWithSourceUrl:(NSString *)sourceUrl;
 
+/**
+    @description Returns every single feed in database.
+ */
+- (NSArray *)allFeed;
+
 @end
