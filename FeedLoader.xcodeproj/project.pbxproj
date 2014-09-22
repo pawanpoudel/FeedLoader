@@ -75,6 +75,7 @@
 		153960C719CF8A54000BF2AE /* FeedCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCard.xib; sourceTree = "<group>"; };
 		153960CA19CF9043000BF2AE /* FeedListTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedListTableDataSource.h; sourceTree = "<group>"; };
 		1553AB2819CFA3C500D18C16 /* feeds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feeds.json; sourceTree = "<group>"; };
+		1555EB3A19CFB86F0036B59F /* FeedDetailTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedDetailTableDataSource.h; sourceTree = "<group>"; };
 		15E55A4519CF9CDF00816EB9 /* ObjectConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectConfigurator.h; sourceTree = "<group>"; };
 		15E55A4619CF9CDF00816EB9 /* ObjectConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectConfigurator.m; sourceTree = "<group>"; };
 		37D8620EB8F943588271952C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -186,6 +187,7 @@
 		1539608F19CE6BAE000BF2AE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1555EB3919CFB8490036B59F /* FeedDetail */,
 				153960B919CF8779000BF2AE /* FeedList */,
 				153960A619CF85EC000BF2AE /* FeedFetcher */,
 				153960AA19CF85EC000BF2AE /* FeedManager */,
@@ -263,6 +265,15 @@
 			);
 			path = Cards;
 			sourceTree = "<group>";
+		};
+		1555EB3919CFB8490036B59F /* FeedDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1555EB3A19CFB86F0036B59F /* FeedDetailTableDataSource.h */,
+			);
+			name = FeedDetail;
+			path = FeedLoader/Feeds/Controllers/FeedDetail;
+			sourceTree = SOURCE_ROOT;
 		};
 		15E55A4419CF9CDF00816EB9 /* DependencyInjection */ = {
 			isa = PBXGroup;
