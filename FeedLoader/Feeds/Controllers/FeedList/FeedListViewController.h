@@ -7,11 +7,12 @@
 //
 
 #import "FeedListTableDataSource.h"
+#import "FeedManagerDelegate.h"
 
 @import UIKit;
 @class FeedManager;
 
-@interface FeedListViewController : UIViewController
+@interface FeedListViewController : UIViewController <FeedManagerDelegate>
 
 /**
     @description A data source object that creates table view
