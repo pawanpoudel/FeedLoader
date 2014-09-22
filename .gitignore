@@ -8,6 +8,7 @@
 *.perspectivev3
 project.xcworkspace/
 xcuserdata/
+*.xccheckout
 
 # Generated files
 *.o
