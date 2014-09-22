@@ -51,7 +51,7 @@
 }
 
 - (BOOL)feedExistsWithSourceUrl:(NSString *)sourceUrl {
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"DHCFeed"];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Feed"];
     request.predicate = [NSPredicate predicateWithFormat:@"sourceUrl like %@", sourceUrl];
     
     NSError *error = nil;
