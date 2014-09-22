@@ -13,6 +13,7 @@
 
 static NSString *const kNibName = @"FeedDetailCard";
 NSString *const FeedDetailCardDidSelectViewSourceNotification = @"FeedDetailCardDidSelectViewSourceNotification";
+NSString *const FeedDetailCardDidSelectShareNotification = @"FeedDetailCardDidSelectShareNotification";
 
 @interface FeedDetailCard() <UIWebViewDelegate>
 
@@ -139,6 +140,13 @@ NSString *const FeedDetailCardDidSelectViewSourceNotification = @"FeedDetailCard
     }
     
     return NO;
+}
+
+- (IBAction)shareButtonTapped:(id)sender {
+    NSNotification *notification = [NSNotification notificationWithName:FeedDetailCardDidSelectShareNotification
+                                                                 object:self.feed];
+    
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
 }
 
 - (IBAction)readFullArticleButtonTapped:(id)sender {

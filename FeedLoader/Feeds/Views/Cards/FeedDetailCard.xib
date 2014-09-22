@@ -68,6 +68,9 @@
                                 <state key="normal" title="Share">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VLW-Kb-dze"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfN-Rg-CQs" userLabel="Separator 2">
                                 <rect key="frame" x="12" y="258" width="279" height="1"/>
@@ -148,7 +151,7 @@
                 <outlet property="summaryWebView" destination="1fN-CK-f38" id="fY7-bF-bXq"/>
                 <outlet property="titleLabel" destination="P4c-To-Ezb" id="TAb-ex-eG4"/>
             </connections>
-            <point key="canvasLocation" x="283" y="349.5"/>
+            <point key="canvasLocation" x="-111" y="340.5"/>
         </tableViewCell>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

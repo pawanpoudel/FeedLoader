@@ -10,6 +10,7 @@
 @class Feed;
 
 extern NSString *const FeedDetailCardDidSelectViewSourceNotification;
+extern NSString *const FeedDetailCardDidSelectShareNotification;
 
 @interface FeedDetailCard : UITableViewCell
 
