@@ -37,7 +37,7 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V7b-ud-jro" userLabel="Image View - Feed Image">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V7b-ud-jro" userLabel="Image View - Feed Image">
                                 <rect key="frame" x="9" y="89" width="280" height="103"/>
                             </imageView>
                         </subviews>
@@ -55,6 +55,7 @@
                 <outlet property="sourceDomainNameButton" destination="awp-3X-Jau" id="Rb2-wd-AAe"/>
                 <outlet property="titleLabel" destination="eno-Du-HOp" id="Tae-6s-4OP"/>
             </connections>
+            <point key="canvasLocation" x="194" y="237"/>
         </tableViewCell>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
