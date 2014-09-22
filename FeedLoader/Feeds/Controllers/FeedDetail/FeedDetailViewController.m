@@ -10,6 +10,7 @@
 #import "Feed.h"
 #import "FeedDetailCard.h"
 #import "PBWebViewcontroller.h"
+#import "Shareable.h"
 
 @interface FeedDetailViewController()
 
@@ -37,12 +38,21 @@
                                              selector:@selector(didSelectViewSource:)
                                                  name:FeedDetailCardDidSelectViewSourceNotification
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didSelectShareFeed:)
+                                                 name:FeedDetailCardDidSelectShareNotification
+                                               object:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:FeedDetailCardDidSelectViewSourceNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:FeedDetailCardDidSelectShareNotification
                                                   object:nil];
 }
 
@@ -55,6 +65,17 @@
     
     [self.navigationController pushViewController:webViewController
                                          animated:YES];
+}
+
+- (void)didSelectShareFeed:(NSNotification *)notification {
+    id <Shareable> shareableObject = [notification object];
+    NSString *textToShare = [shareableObject textToShare];
+    
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[textToShare]
+                                                                             applicationActivities:nil];
+    [self presentViewController:controller
+                       animated:YES
+                     completion:nil];
 }
 
 @end
