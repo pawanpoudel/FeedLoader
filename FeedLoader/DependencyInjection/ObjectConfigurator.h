@@ -8,6 +8,7 @@
 
 @import Foundation;
 @class FeedManager;
+@class FeedListViewController;
 
 @interface ObjectConfigurator : NSObject
 
@@ -27,5 +28,10 @@
                  be set to the object that wishes to use feed manager.
  */
 - (FeedManager *)feedManager;
+
+/**
+    @description A fully configured feed list view controller.
+ */
+- (FeedListViewController *)feedListViewController;
 
 @end

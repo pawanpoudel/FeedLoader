@@ -12,6 +12,8 @@
 #import "FeedBuilder.h"
 #import "FeedDataManager.h"
 #import "CoreDataStack.h"
+#import "FeedListViewController.h"
+#import "FeedListTableDefaultDataSource.h"
 
 @implementation ObjectConfigurator
 
@@ -54,6 +56,19 @@
     });
     
     return coreDataStack;
+}
+
+- (FeedListViewController *)feedListViewController {
+    FeedListViewController *feedListVC = [[FeedListViewController alloc] init];
+    
+    FeedListTableDefaultDataSource *dataSource = [[FeedListTableDefaultDataSource alloc] init];
+    [feedListVC setDataSource:dataSource];
+    
+    FeedManager *feedManager = [self feedManager];
+    feedManager.delegate = feedListVC;
+    [feedListVC setFeedManager:feedManager];
+    
+    return feedListVC;
 }
 
 @end
