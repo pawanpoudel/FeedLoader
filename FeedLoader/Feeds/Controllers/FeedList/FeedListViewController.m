@@ -10,7 +10,7 @@
 #import "FeedListTableDefaultDataSource.h"
 #import "FeedManager.h"
 
-@interface FeedListViewController () <FeedManagerDelegate>
+@interface FeedListViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
 @property (nonatomic) FeedManager *feedManager;
