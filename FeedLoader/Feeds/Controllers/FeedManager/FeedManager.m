@@ -7,12 +7,12 @@
 //
 
 #import "FeedManager.h"
-#import "FeedBuilder.h"
+#import "FeedCache.h"
 #import "FeedDataManager.h"
 
 @interface FeedManager()
 
-@property (nonatomic) FeedBuilder *feedBuilder;
+@property (nonatomic) FeedCache *feedCache;
 @property (nonatomic) id<FeedFetcher> feedFetcher;
 @property (nonatomic) FeedDataManager *feedDataManager;
 
