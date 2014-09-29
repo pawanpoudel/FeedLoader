@@ -40,7 +40,7 @@
     self.feedTableView.dataSource = self.dataSource;
     self.feedTableView.delegate = self.dataSource;
     
-    [self.feedManager fetchFeeds];
+    [self fetchFeeds];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -69,6 +69,14 @@
     
     [self.navigationController pushViewController:feedDetailViewController
                                          animated:YES];
+}
+
+#pragma mark - Fetch feeds
+
+- (void)fetchFeeds {
+    NSArray *feeds = [self.feedManager fetchFeeds];
+    [self.dataSource setFeeds:feeds];
+    [self.feedTableView reloadData];
 }
 
 #pragma mark - Feed manager delegate methods
