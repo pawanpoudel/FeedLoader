@@ -17,4 +17,10 @@
  */
 - (void)setFeeds:(NSArray *)feeds;
 
+/**
+    @description Adds more feeds to the data source's collection of feeds.
+    @param feeds An array of Feed objects.
+ */
+- (void)addFeeds:(NSArray *)feeds;
+
 @end

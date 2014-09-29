@@ -20,6 +20,12 @@ NSString *const FeedListTableDataSourceDidSelectCardNotification =
 
 @implementation FeedListTableDefaultDataSource
 
+#pragma mark - Modify feed list
+
+- (void)addFeeds:(NSArray *)feeds {
+    [self setFeeds:[self.feeds arrayByAddingObjectsFromArray:feeds]];
+}
+
 #pragma mark - Table view methods
 
 - (NSInteger)tableView:(UITableView *)tableView
