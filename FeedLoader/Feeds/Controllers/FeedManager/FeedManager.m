@@ -40,10 +40,6 @@
 - (void)buildFeedsFromJSON:(NSArray *)JSON {
     NSArray *feeds = [self.feedBuilder feedsFromJSON:JSON];
     
-    if ([feeds count] == 0) {
-        feeds = [self.feedDataManager allFeed];
-    }
-    
     if ([self.delegate respondsToSelector:@selector(feedManager:didReceiveFeeds:)]) {
         [self.delegate feedManager:self didReceiveFeeds:feeds];
     }
