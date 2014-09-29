@@ -7,28 +7,23 @@
 //
 
 @import Foundation;
-@class FeedDataManager;
+@class Feed;
 
 /**
-    @description Construct Feed objects from JSON array.
+    @description Fills in data for the specified feed object
+                 from JSON dictionary.
     @note The format of the JSON is driven by the feed service.
     @see Feed
  */
 @interface FeedBuilder : NSObject
 
 /**
-    @description Sets the feed data manager that knows how to create,
-                 update, delete and retrieve Feed objects.
-    @param feedDataManager A FeedDataManager object.
+    @description Fills in data for the specified feed from the given
+                 feed JSON.
+    @param feed The Feed object whose data needs to be filled in.
+    @param feedJSON The feed JSON from which the data will be read.
  */
-- (void)setFeedDataManager:(FeedDataManager *)feedDataManager;
-
-/**
-    @description Given an array containing JSON dictionaries, returns a list
-                 of Feed objects.
-    @param JSON The deserialized JSON object in NSArray format.
-    @return An array of Feed objects.
- */
-- (NSArray *)feedsFromJSON:(NSArray *)JSON;
+- (void)fillInDetailsForFeed:(Feed *)feed
+                    fromJSON:(NSDictionary *)feedJSON;
 
 @end

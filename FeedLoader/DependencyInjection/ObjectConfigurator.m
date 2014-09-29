@@ -40,8 +40,6 @@
 
 - (FeedBuilder *)feedBuilder {
     FeedBuilder *feedBuilder = [[FeedBuilder alloc] init];
-    [feedBuilder setFeedDataManager:[self feedDataManager]];
-    
     return feedBuilder;
 }
 
