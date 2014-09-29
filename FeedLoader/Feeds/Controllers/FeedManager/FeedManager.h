@@ -49,8 +49,14 @@
 - (void)setFeedDataManager:(FeedDataManager *)feedDataManager;
 
 /**
-    @description Initiates retrieval of feeds
+    @description Initiates retrieval of feeds.
+    @discussion This method returns immediately with feed objects
+                that were cached previously. It then initiates the retrieval
+                of feeds from an external source. Once the feeds have been
+                retrieved from an external source, the delegate
+                will be notified with the latest feeds.
+    @return An array of cached Feed objects.
  */
-- (void)fetchFeeds;
+- (NSArray *)fetchFeeds;
 
 @end

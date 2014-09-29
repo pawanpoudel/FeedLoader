@@ -20,7 +20,7 @@
 
 @implementation FeedManager
 
-- (void)fetchFeeds {
+- (NSArray *)fetchFeeds {
     [self.feedFetcher fetchFeedWithCompletionHandler:^(id JSON, NSError *error) {
         if (error) {
             NSLog(@"Unable to fetch feeds.");
@@ -29,6 +29,8 @@
             [self buildFeedsFromJSON:JSON];
         }
     }];
+    
+    return [self.feedCache cachedFeed];
 }
 
 - (void)tellDelegateAboutError:(NSError *)error {
