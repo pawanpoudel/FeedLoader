@@ -11,7 +11,7 @@
 #import "FeedFetcher.h"
 
 @import Foundation;
-@class FeedBuilder;
+@class FeedCache;
 @class FeedDataManager;
 
 /**
@@ -34,11 +34,12 @@
 - (void)setFeedFetcher:(id<FeedFetcher>)feedFetcher;
 
 /**
-    @description Sets the feed builder object responsible for creating
-                 Feed objects from JSON retrieved from feed service.
-    @param feedBuilder A DHCFeedBuilder object.
+    @description Sets the feed cache object responsible for adding
+                 new feeds to the cache and retrieving them from
+                 cache when asked.
+    @param feedCache A FeedCache object.
  */
-- (void)setFeedBuilder:(FeedBuilder *)feedBuilder;
+- (void)setFeedCache:(FeedCache *)feedCache;
 
 /**
     @description Sets the feed data manager that knows how to create,
@@ -48,8 +49,14 @@
 - (void)setFeedDataManager:(FeedDataManager *)feedDataManager;
 
 /**
-    @description Initiates retrieval of feeds
+    @description Initiates retrieval of feeds.
+    @discussion This method returns immediately with feed objects
+                that were cached previously. It then initiates the retrieval
+                of feeds from an external source. Once the feeds have been
+                retrieved from an external source, the delegate
+                will be notified with the latest feeds.
+    @return An array of cached Feed objects.
  */
-- (void)fetchFeeds;
+- (NSArray *)fetchFeeds;
 
 @end

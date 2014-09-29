@@ -83,4 +83,27 @@
     return feedList;
 }
 
+- (NSArray *)allFeedSortedByKey:(NSString *)key
+                      ascending:(BOOL)ascending
+{
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Feed"
+                                                         inManagedObjectContext:[self managedObjectContext]];
+    
+    NSSortDescriptor *sortByPublishedDate = [[NSSortDescriptor alloc] initWithKey:key
+                                                                        ascending:ascending];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    request.entity = entityDescription;
+    request.sortDescriptors = @[sortByPublishedDate];
+    
+    NSError *error = nil;
+    NSArray *sortedFeed = [[self managedObjectContext] executeFetchRequest:request
+                                                                     error:&error];
+    if (error) {
+        NSLog(@"Failed to fetch news feed from Core Data: %@", error.localizedDescription);
+    }
+    
+    return sortedFeed;
+}
+
+
 @end

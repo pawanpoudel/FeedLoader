@@ -7,12 +7,12 @@
 //
 
 #import "FeedManager.h"
-#import "FeedBuilder.h"
+#import "FeedCache.h"
 #import "FeedDataManager.h"
 
 @interface FeedManager()
 
-@property (nonatomic) FeedBuilder *feedBuilder;
+@property (nonatomic) FeedCache *feedCache;
 @property (nonatomic) id<FeedFetcher> feedFetcher;
 @property (nonatomic) FeedDataManager *feedDataManager;
 
@@ -20,7 +20,7 @@
 
 @implementation FeedManager
 
-- (void)fetchFeeds {
+- (NSArray *)fetchFeeds {
     [self.feedFetcher fetchFeedWithCompletionHandler:^(id JSON, NSError *error) {
         if (error) {
             NSLog(@"Unable to fetch feeds.");
@@ -29,6 +29,8 @@
             [self buildFeedsFromJSON:JSON];
         }
     }];
+    
+    return [self.feedCache cachedFeed];
 }
 
 - (void)tellDelegateAboutError:(NSError *)error {
@@ -38,10 +40,10 @@
 }
 
 - (void)buildFeedsFromJSON:(NSArray *)JSON {
-    NSArray *feeds = [self.feedBuilder feedsFromJSON:JSON];
+    NSArray *newlyFetchedFeeds = [self.feedCache addFeedToCacheFromJSON:JSON];
     
     if ([self.delegate respondsToSelector:@selector(feedManager:didReceiveFeeds:)]) {
-        [self.delegate feedManager:self didReceiveFeeds:feeds];
+        [self.delegate feedManager:self didReceiveFeeds:newlyFetchedFeeds];
     }
 }
 

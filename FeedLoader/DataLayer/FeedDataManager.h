@@ -45,4 +45,15 @@
  */
 - (NSArray *)allFeed;
 
+/**
+    @description Returns all news feed stored in database sorted
+                 by the specified key in specified order.
+    @param key Name of the attribute to sort against.
+    @param ascending Indicates whether the sorting should be
+                     in ascending or descending order.
+    @return An array of Feed objects.
+ */
+- (NSArray *)allFeedSortedByKey:(NSString *)key
+                      ascending:(BOOL)ascending;
+
 @end
