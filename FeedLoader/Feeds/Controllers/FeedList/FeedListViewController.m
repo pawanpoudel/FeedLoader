@@ -85,8 +85,21 @@
     didReceiveFeeds:(NSArray *)feeds
 {
     NSLog(@"Feed manager did receive %ld feeds", (long)[feeds count]);
-    [self.dataSource setFeeds:feeds];
-    [self.feedTableView reloadData];
+    [self.dataSource addFeeds:feeds];
+    [self insertFeedsIntoTableView:feeds];
+}
+
+- (void)insertFeedsIntoTableView:(NSArray *)feeds {
+    if ([feeds count] > 0) {
+        NSMutableArray *newRows = [NSMutableArray array];
+        for (int i = 0; i < [feeds count]; i++) {
+            [newRows addObject:[NSIndexPath indexPathForRow:i
+                                                  inSection:0]];
+        }
+        
+        [self.feedTableView insertRowsAtIndexPaths:newRows
+                                  withRowAnimation:UITableViewRowAnimationTop];
+    }
 }
 
 - (void)feedManager:(FeedManager *)manager
