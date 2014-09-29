@@ -40,10 +40,10 @@
 }
 
 - (void)buildFeedsFromJSON:(NSArray *)JSON {
-    NSArray *feeds = [self.feedBuilder feedsFromJSON:JSON];
+    NSArray *newlyFetchedFeeds = [self.feedCache addFeedToCacheFromJSON:JSON];
     
     if ([self.delegate respondsToSelector:@selector(feedManager:didReceiveFeeds:)]) {
-        [self.delegate feedManager:self didReceiveFeeds:feeds];
+        [self.delegate feedManager:self didReceiveFeeds:newlyFetchedFeeds];
     }
 }
 
