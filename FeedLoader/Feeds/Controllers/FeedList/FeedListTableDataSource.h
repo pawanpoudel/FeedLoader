@@ -7,20 +7,16 @@
 //
 
 @import UIKit;
+@import CoreData;
 
 @protocol FeedListTableDataSource <UITableViewDataSource, UITableViewDelegate>
 
-/**
-    @description Sets feed objects whose information will be used to
-                 configure FeedCard views.
-    @param feeds An array of Feed objects.
+/*!
+    @description Sets a fetched results controller that efficiently manages the
+                 results returned from a Core Data fetch request to provide data
+                 for the feed table view.
+    @param controller A NSFetchedResultsController object.
  */
-- (void)setFeeds:(NSArray *)feeds;
-
-/**
-    @description Adds more feeds to the data source's collection of feeds.
-    @param feeds An array of Feed objects.
- */
-- (void)addFeeds:(NSArray *)feeds;
+- (void)setFetchedResultsController:(NSFetchedResultsController *)controller;
 
 @end

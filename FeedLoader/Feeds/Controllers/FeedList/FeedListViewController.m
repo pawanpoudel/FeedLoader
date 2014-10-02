@@ -11,11 +11,15 @@
 #import "FeedManager.h"
 #import "FeedDetailViewController.h"
 #import "FeedDetailTableDefaultDataSource.h"
+#import "FeedDataManager.h"
+#import "ObjectConfigurator.h"
 
 @interface FeedListViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
 @property (nonatomic) FeedManager *feedManager;
+@property (nonatomic) FeedDataManager *feedDataManager;
+@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -26,6 +30,7 @@
 - (id <FeedListTableDataSource>)dataSource {
     if (_dataSource == nil) {
         _dataSource = [[FeedListTableDefaultDataSource alloc] init];
+        [_dataSource setFetchedResultsController:self.fetchedResultsController];
     }
     
     return _dataSource;
@@ -109,6 +114,28 @@
     NSLog(@"Error domain: %@", error.domain);
     NSLog(@"Error code: %ld", (long)error.code);
     NSLog(@"Error userInfo: %@", [error userInfo]);
+}
+
+#pragma mark - Fetched results controller
+
+- (NSFetchedResultsController *)fetchedResultsController {
+    if (_fetchedResultsController == nil) {
+        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Feed"];
+        NSSortDescriptor *sortByPublishedDate = [[NSSortDescriptor alloc] initWithKey:@"publishedDate"
+                                                                            ascending:NO];
+        
+        fetchRequest.sortDescriptors = @[sortByPublishedDate];
+        fetchRequest.fetchBatchSize = 10;
+        
+        NSManagedObjectContext *context = self.feedDataManager.managedObjectContext;
+        _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                        managedObjectContext:context
+                                                                          sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+        _fetchedResultsController.delegate = self;
+    }
+    
+    return _fetchedResultsController;
 }
 
 @end

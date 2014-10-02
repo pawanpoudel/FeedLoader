@@ -14,24 +14,24 @@ NSString *const FeedListTableDataSourceDidSelectCardNotification =
 
 @interface FeedListTableDefaultDataSource ()
 
+@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic) NSArray *feeds;
 
 @end
 
 @implementation FeedListTableDefaultDataSource
 
-#pragma mark - Modify feed list
-
-- (void)addFeeds:(NSArray *)feeds {
-    [self setFeeds:[self.feeds arrayByAddingObjectsFromArray:feeds]];
-}
-
 #pragma mark - Table view methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [self.fetchedResultsController.sections count];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView
     numberOfRowsInSection:(NSInteger)section
 {
-    return [self.feeds count];
+    NSArray *sections = self.fetchedResultsController.sections;
+    return [sections[section] numberOfObjects];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
@@ -72,14 +72,15 @@ NSString *const FeedListTableDataSourceDidSelectCardNotification =
 - (void)configureCell:(FeedCard *)cell
           atIndexPath:(NSIndexPath *)indexPath
 {
-    [cell setFeed:self.feeds[indexPath.row]];
+    Feed *feed = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [cell setFeed:feed];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)tableView:(UITableView *)tableView
     didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Feed *feed = self.feeds[indexPath.row];
+    Feed *feed = [self.fetchedResultsController objectAtIndexPath:indexPath];
     NSNotification *notification = [NSNotification notificationWithName:FeedListTableDataSourceDidSelectCardNotification
                                                                  object:feed];
     

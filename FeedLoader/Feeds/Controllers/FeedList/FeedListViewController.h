@@ -11,6 +11,7 @@
 
 @import UIKit;
 @class FeedManager;
+@class FeedDataManager;
 
 @interface FeedListViewController : UIViewController <FeedManagerDelegate>
 
@@ -28,5 +29,12 @@
     @param feedManager A FeedManager object.
  */
 - (void)setFeedManager:(FeedManager *)feedManager;
+
+/**
+    @description Sets the feed data manager that knows how to create,
+                 update, delete and retrieve Feed objects.
+    @param feedDataManager A FeedDataManager object.
+ */
+- (void)setFeedDataManager:(FeedDataManager *)feedDataManager;
 
 @end
