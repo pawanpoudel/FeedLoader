@@ -7,21 +7,56 @@
 //
 
 #import "FeedBuilder.h"
+#import "FeedDataManager.h"
 #import "Feed.h"
+
+@interface FeedBuilder()
+
+@property (nonatomic) FeedDataManager *feedDataManager;
+
+@end
 
 @implementation FeedBuilder
 
-#pragma mark - Fill in feed detail
+#pragma mark - Build feed objects
+
+- (NSArray *)feedsFromJSON:(NSArray *)JSON {
+    NSParameterAssert(JSON != nil);
+    NSMutableArray *feedsArray = [NSMutableArray array];
+    
+    for (NSDictionary *feedDict in JSON) {
+        if ([self feedExistsInDatabase:feedDict]) {
+            continue;
+        }
+        
+        Feed *feed = [self.feedDataManager newFeed];
+        [self fillInDetailsForFeed:feed
+                    fromDictionary:feedDict];
+        
+        [feedsArray addObject:feed];
+    }
+    
+    [self.feedDataManager saveData];
+    return [feedsArray copy];
+}
+
+- (BOOL)feedExistsInDatabase:(NSDictionary *)feed {
+    if (feed[@"link"] == nil) {
+        return NO;
+    }
+    
+    return [self.feedDataManager feedExistsWithSourceUrl:feed[@"link"]];
+}
 
 - (void)fillInDetailsForFeed:(Feed *)feed
-                    fromJSON:(NSDictionary *)feedJSON
+              fromDictionary:(NSDictionary *)feedDict
 {
-    feed.imageUrl = feedJSON[@"image_url"];
-    feed.publishedDate = [self dateFromString:feedJSON[@"published_date"]];
-    feed.summary = feedJSON[@"summary"];
-    feed.title = feedJSON[@"title"];
-    feed.sourceUrl = feedJSON[@"link"];
-    feed.sourceDomainName = [self domainNameFromUrlString:feedJSON[@"link"]];
+    feed.imageUrl = feedDict[@"image_url"];
+    feed.publishedDate = [self dateFromString:feedDict[@"published_date"]];
+    feed.summary = feedDict[@"summary"];
+    feed.title = feedDict[@"title"];
+    feed.sourceUrl = feedDict[@"link"];
+    feed.sourceDomainName = [self domainNameFromUrlString:feedDict[@"link"]];
 }
 
 #pragma mark - Date formatting
