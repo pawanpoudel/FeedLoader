@@ -12,7 +12,6 @@
 
 @import Foundation;
 @class FeedBuilder;
-@class FeedDataManager;
 
 /**
     @description A façade providing access to the Feed service.
@@ -39,13 +38,6 @@
     @param feedBuilder A FeedBuilder object.
  */
 - (void)setFeedBuilder:(FeedBuilder *)feedBuilder;
-
-/**
-    @description Sets the feed data manager that knows how to create,
-                 update, delete and retrieve Feed objects.
-    @param feedDataManager A FeedDataManager object.
- */
-- (void)setFeedDataManager:(FeedDataManager *)feedDataManager;
 
 /**
     @description Initiates retrieval of feeds.

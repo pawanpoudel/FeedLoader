@@ -8,13 +8,11 @@
 
 #import "FeedManager.h"
 #import "FeedBuilder.h"
-#import "FeedDataManager.h"
 
 @interface FeedManager()
 
 @property (nonatomic) id<FeedFetcher> feedFetcher;
 @property (nonatomic) FeedBuilder *feedBuilder;
-@property (nonatomic) FeedDataManager *feedDataManager;
 
 @end
 
