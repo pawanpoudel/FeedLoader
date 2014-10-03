@@ -30,7 +30,6 @@
 		1555EB3D19CFBA380036B59F /* FeedDetailTableDefaultDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1555EB3C19CFBA380036B59F /* FeedDetailTableDefaultDataSource.m */; };
 		1555EB4019CFBCEC0036B59F /* FeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1555EB3F19CFBCEC0036B59F /* FeedDetailViewController.m */; };
 		1555EB4219CFBD960036B59F /* FeedDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1555EB4119CFBD960036B59F /* FeedDetailViewController.xib */; };
-		15A4D65019D8DF3D009F703B /* FeedCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A4D64F19D8DF3D009F703B /* FeedCache.m */; };
 		15E55A4719CF9CDF00816EB9 /* ObjectConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E55A4619CF9CDF00816EB9 /* ObjectConfigurator.m */; };
 		369A6B1A75BE4F108D1F6497 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD3A73E4F044FF7AF266EDF /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -91,8 +90,6 @@
 		1555EB3F19CFBCEC0036B59F /* FeedDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedDetailViewController.m; sourceTree = "<group>"; };
 		1555EB4119CFBD960036B59F /* FeedDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedDetailViewController.xib; sourceTree = "<group>"; };
 		1555EB4319CFC59F0036B59F /* Shareable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shareable.h; sourceTree = "<group>"; };
-		15A4D64E19D8DF3D009F703B /* FeedCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedCache.h; sourceTree = "<group>"; };
-		15A4D64F19D8DF3D009F703B /* FeedCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedCache.m; sourceTree = "<group>"; };
 		15E55A4519CF9CDF00816EB9 /* ObjectConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectConfigurator.h; sourceTree = "<group>"; };
 		15E55A4619CF9CDF00816EB9 /* ObjectConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectConfigurator.m; sourceTree = "<group>"; };
 		37D8620EB8F943588271952C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -207,7 +204,6 @@
 				1555EB3919CFB8490036B59F /* FeedDetail */,
 				153960B919CF8779000BF2AE /* FeedList */,
 				153960A619CF85EC000BF2AE /* FeedFetcher */,
-				15A4D64D19D8DF2B009F703B /* FeedCache */,
 				153960AA19CF85EC000BF2AE /* FeedManager */,
 				153960AE19CF85EC000BF2AE /* ModelBuilders */,
 			);
@@ -301,15 +297,6 @@
 			name = FeedDetail;
 			path = FeedLoader/Feeds/Controllers/FeedDetail;
 			sourceTree = SOURCE_ROOT;
-		};
-		15A4D64D19D8DF2B009F703B /* FeedCache */ = {
-			isa = PBXGroup;
-			children = (
-				15A4D64E19D8DF3D009F703B /* FeedCache.h */,
-				15A4D64F19D8DF3D009F703B /* FeedCache.m */,
-			);
-			path = FeedCache;
-			sourceTree = "<group>";
 		};
 		15E55A4419CF9CDF00816EB9 /* DependencyInjection */ = {
 			isa = PBXGroup;
@@ -482,7 +469,6 @@
 				1555EB4019CFBCEC0036B59F /* FeedDetailViewController.m in Sources */,
 				15E55A4719CF9CDF00816EB9 /* ObjectConfigurator.m in Sources */,
 				1539605F19CE556B000BF2AE /* main.m in Sources */,
-				15A4D65019D8DF3D009F703B /* FeedCache.m in Sources */,
 				153960BD19CF8796000BF2AE /* FeedListViewController.m in Sources */,
 				153960B219CF85EC000BF2AE /* FeedManager.m in Sources */,
 			);

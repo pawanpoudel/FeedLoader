@@ -9,7 +9,6 @@
 #import "ObjectConfigurator.h"
 #import "FeedManager.h"
 #import "FileFeedFetcher.h"
-#import "FeedCache.h"
 #import "FeedBuilder.h"
 #import "FeedDataManager.h"
 #import "CoreDataStack.h"
@@ -32,7 +31,6 @@
 - (FeedManager *)feedManager {
     FeedManager *feedManager = [[FeedManager alloc] init];
     [feedManager setFeedFetcher:[[FileFeedFetcher alloc] init]];
-    [feedManager setFeedCache:[self feedCache]];
     [feedManager setFeedDataManager:[self feedDataManager]];
     
     return feedManager;
@@ -41,14 +39,6 @@
 - (FeedBuilder *)feedBuilder {
     FeedBuilder *feedBuilder = [[FeedBuilder alloc] init];
     return feedBuilder;
-}
-
-- (FeedCache *)feedCache {
-    FeedCache *feedCache = [[FeedCache alloc] init];
-    [feedCache setFeedBuilder:[self feedBuilder]];
-    [feedCache setFeedDataManager:[self feedDataManager]];
-    
-    return feedCache;
 }
 
 - (FeedDataManager *)feedDataManager {
