@@ -14,7 +14,7 @@
 #import "FeedDataManager.h"
 #import "ObjectConfigurator.h"
 
-@interface FeedListViewController ()
+@interface FeedListViewController () <NSFetchedResultsControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *feedTableView;
 @property (nonatomic) FeedManager *feedManager;
@@ -45,7 +45,7 @@
     self.feedTableView.dataSource = self.dataSource;
     self.feedTableView.delegate = self.dataSource;
     
-    [self fetchFeeds];
+    [self.feedManager fetchFeeds];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -76,35 +76,12 @@
                                          animated:YES];
 }
 
-#pragma mark - Fetch feeds
-
-- (void)fetchFeeds {
-    NSArray *feeds = [self.feedManager fetchFeeds];
-    [self.dataSource setFeeds:feeds];
-    [self.feedTableView reloadData];
-}
-
 #pragma mark - Feed manager delegate methods
 
 - (void)feedManager:(FeedManager *)manager
     didReceiveFeeds:(NSArray *)feeds
 {
     NSLog(@"Feed manager did receive %ld feeds", (long)[feeds count]);
-    [self.dataSource addFeeds:feeds];
-    [self insertFeedsIntoTableView:feeds];
-}
-
-- (void)insertFeedsIntoTableView:(NSArray *)feeds {
-    if ([feeds count] > 0) {
-        NSMutableArray *newRows = [NSMutableArray array];
-        for (int i = 0; i < [feeds count]; i++) {
-            [newRows addObject:[NSIndexPath indexPathForRow:i
-                                                  inSection:0]];
-        }
-        
-        [self.feedTableView insertRowsAtIndexPaths:newRows
-                                  withRowAnimation:UITableViewRowAnimationTop];
-    }
 }
 
 - (void)feedManager:(FeedManager *)manager
@@ -136,6 +113,84 @@
     }
     
     return _fetchedResultsController;
+}
+
+#pragma mark - NSFetchedResultController delegate methods
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    // The fetch controller is about to start sending change notifications,
+    // so prepare the table view for updates.
+    [self.feedTableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath
+{
+    UITableView *tableView = self.feedTableView;
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:@[newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:@[indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            if (newIndexPath == nil) {
+                [tableView reloadRowsAtIndexPaths:@[indexPath]
+                                 withRowAnimation:UITableViewRowAnimationNone];
+            }
+            else {
+                [tableView deleteRowsAtIndexPaths:@[indexPath]
+                                 withRowAnimation:UITableViewRowAnimationNone];
+                [tableView insertRowsAtIndexPaths:@[indexPath]
+                                 withRowAnimation:UITableViewRowAnimationNone];
+            }
+            
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:@[indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            
+            [tableView insertRowsAtIndexPaths:@[newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id )sectionInfo
+           atIndex:(NSUInteger)sectionIndex
+     forChangeType:(NSFetchedResultsChangeType)type
+{
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.feedTableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                              withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.feedTableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                              withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    // The fetch controller has sent all current change notifications,
+    // so tell the table view to process all updates.
+    [self.feedTableView endUpdates];
 }
 
 @end
