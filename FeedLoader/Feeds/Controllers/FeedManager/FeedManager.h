@@ -11,6 +11,7 @@
 #import "FeedFetcher.h"
 
 @import Foundation;
+@class FeedBuilder;
 @class FeedDataManager;
 
 /**
@@ -31,6 +32,13 @@
     @param feedFetcher An object that conforms to FeedFetcher protocol.
  */
 - (void)setFeedFetcher:(id<FeedFetcher>)feedFetcher;
+
+/**
+    @description Sets the feed builder object responsible for creating
+                 Feed objects from JSON retrieved from feed service.
+    @param feedBuilder A FeedBuilder object.
+ */
+- (void)setFeedBuilder:(FeedBuilder *)feedBuilder;
 
 /**
     @description Sets the feed data manager that knows how to create,
