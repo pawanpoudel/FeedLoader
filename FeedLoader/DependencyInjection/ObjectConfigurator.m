@@ -67,6 +67,8 @@
     feedManager.delegate = feedListVC;
     [feedListVC setFeedManager:feedManager];
     
+    [feedListVC setFeedDataManager:[self feedDataManager]];
+    
     return feedListVC;
 }
 

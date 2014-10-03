@@ -25,27 +25,17 @@
 
 @implementation FeedListViewController
 
-#pragma mark - Accessors
-
-- (id <FeedListTableDataSource>)dataSource {
-    if (_dataSource == nil) {
-        _dataSource = [[FeedListTableDefaultDataSource alloc] init];
-        [_dataSource setFetchedResultsController:self.fetchedResultsController];
-    }
-    
-    return _dataSource;
-}
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Feed List";
     
+    [self.dataSource setFetchedResultsController:self.fetchedResultsController];
     self.feedTableView.dataSource = self.dataSource;
     self.feedTableView.delegate = self.dataSource;
     
-    [self.feedManager fetchFeeds];
+    [self fetchFeed];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -74,6 +64,24 @@
     
     [self.navigationController pushViewController:feedDetailViewController
                                          animated:YES];
+}
+
+#pragma mark - Fetch feeds
+
+- (void)fetchFeed {
+    [self.feedManager fetchFeeds];
+    [self showFeedsSavedLocally];
+}
+
+- (void)showFeedsSavedLocally {
+    NSError *error = nil;
+    BOOL successfullyFetchedNewsFromDatabase = [self.fetchedResultsController performFetch:&error];
+    
+    if (successfullyFetchedNewsFromDatabase == NO) {
+        NSLog(@"Error occurred while fetching feeds from database: %@", error.localizedDescription);
+    }
+    
+    [self.feedTableView reloadData];
 }
 
 #pragma mark - Feed manager delegate methods
