@@ -45,8 +45,8 @@
     return [feeds copy];
 }
 
-- (BOOL)feedExistsInDatabase:(NSDictionary *)feed {
-    return [self.feedDataManager feedExistsWithSourceUrl:feed[@"url"]];
+- (BOOL)feedExistsInDatabase:(NSDictionary *)feed {    
+    return [self.feedDataManager feedExistsWithSourceUrl:feed[@"link"]];
 }
 
 - (void)sortFeedsByPublishedDate:(NSMutableArray *)feeds {
