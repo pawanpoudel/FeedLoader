@@ -7,11 +7,26 @@
 //
 
 @import Foundation;
+@import CoreData;
 
 @class CoreDataStack;
 @class Feed;
 
 @interface FeedDataManager : NSObject
+
+/*!
+    @description The managed object context used to fetch objects.
+    @discussion Managed object context's primary responsibility is to
+                manage a collection of managed objcts. Although the
+                underlying managed object context can be accessed through
+                this property, it is highly recommended to use other
+                methods in this class for creating, updating and deleting
+                data. This property exists so that @aNSFetchedResultsController
+                objects can directly register to listen to change notification
+                on this context and properly update their result set and
+                section information.
+ */
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
 /**
     @description Creates and returns a new FeedDataManager object.

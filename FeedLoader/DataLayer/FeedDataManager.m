@@ -47,7 +47,7 @@
 
 - (Feed *)newFeed {
     return [NSEntityDescription insertNewObjectForEntityForName:@"Feed"
-                                         inManagedObjectContext:[self managedObjectContext]];
+                                         inManagedObjectContext:self.managedObjectContext];
 }
 
 - (BOOL)feedExistsWithSourceUrl:(NSString *)sourceUrl {
@@ -55,8 +55,8 @@
     request.predicate = [NSPredicate predicateWithFormat:@"sourceUrl like %@", sourceUrl];
     
     NSError *error = nil;
-    NSArray *feedList = [[self managedObjectContext] executeFetchRequest:request
-                                                                   error:&error];
+    NSArray *feedList = [self.managedObjectContext executeFetchRequest:request
+                                                                 error:&error];
     if (feedList == nil) {
         NSLog(@"Error occurred while checking the existence of feeds with source url: %@",
               error.localizedDescription);
@@ -73,8 +73,8 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Feed"];
     
     NSError *error = nil;
-    NSArray *feedList = [[self managedObjectContext] executeFetchRequest:request
-                                                                   error:&error];
+    NSArray *feedList = [self.managedObjectContext executeFetchRequest:request
+                                                                 error:&error];
     if (feedList == nil) {
         NSLog(@"Error occurred while checking the existence of feeds with source url: %@",
               error.localizedDescription);
@@ -87,7 +87,7 @@
                       ascending:(BOOL)ascending
 {
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Feed"
-                                                         inManagedObjectContext:[self managedObjectContext]];
+                                                         inManagedObjectContext:self.managedObjectContext];
     
     NSSortDescriptor *sortByPublishedDate = [[NSSortDescriptor alloc] initWithKey:key
                                                                         ascending:ascending];
@@ -96,14 +96,13 @@
     request.sortDescriptors = @[sortByPublishedDate];
     
     NSError *error = nil;
-    NSArray *sortedFeed = [[self managedObjectContext] executeFetchRequest:request
-                                                                     error:&error];
+    NSArray *sortedFeed = [self.managedObjectContext executeFetchRequest:request
+                                                                   error:&error];
     if (error) {
         NSLog(@"Failed to fetch news feed from Core Data: %@", error.localizedDescription);
     }
     
     return sortedFeed;
 }
-
 
 @end

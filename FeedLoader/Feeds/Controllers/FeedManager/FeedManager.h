@@ -11,8 +11,7 @@
 #import "FeedFetcher.h"
 
 @import Foundation;
-@class FeedCache;
-@class FeedDataManager;
+@class FeedBuilder;
 
 /**
     @description A façade providing access to the Feed service.
@@ -34,29 +33,18 @@
 - (void)setFeedFetcher:(id<FeedFetcher>)feedFetcher;
 
 /**
-    @description Sets the feed cache object responsible for adding
-                 new feeds to the cache and retrieving them from
-                 cache when asked.
-    @param feedCache A FeedCache object.
+    @description Sets the feed builder object responsible for creating
+                 Feed objects from JSON retrieved from feed service.
+    @param feedBuilder A FeedBuilder object.
  */
-- (void)setFeedCache:(FeedCache *)feedCache;
-
-/**
-    @description Sets the feed data manager that knows how to create,
-                 update, delete and retrieve Feed objects.
-    @param feedDataManager A FeedDataManager object.
- */
-- (void)setFeedDataManager:(FeedDataManager *)feedDataManager;
+- (void)setFeedBuilder:(FeedBuilder *)feedBuilder;
 
 /**
     @description Initiates retrieval of feeds.
-    @discussion This method returns immediately with feed objects
-                that were cached previously. It then initiates the retrieval
-                of feeds from an external source. Once the feeds have been
-                retrieved from an external source, the delegate
-                will be notified with the latest feeds.
-    @return An array of cached Feed objects.
+    @discussion This method fetches feeds asynchronously. You need to
+                implement delegate methods in FeedManagerDelegate protocol
+                to find out if the fetching was successful or not.
  */
-- (NSArray *)fetchFeeds;
+- (void)fetchFeeds;
 
 @end
